@@ -17,7 +17,7 @@ El frontend incluye páginas HTML de login y perfil que interactúan con la API 
 
 
 ## Estructura Proyecto
-![Texto alternativo](     )
+![Texto alternativo](https://github.com/AlvarezF7/M8-4-autenticacion-autorizacion-jwt-express/blob/main/public/img/estructura-proyecto.png)
 
 
 ## Funcionalidades
