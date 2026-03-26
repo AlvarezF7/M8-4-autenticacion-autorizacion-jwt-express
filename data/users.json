@@ -16,5 +16,11 @@
     "email": "devnueve@gmail.com",
     "passwordHash": "$2b$10$fBgrkIZwUPNck75fzAcMv.wmBYZO3S/QrTz3wUGQdkxGiQi5co4Su",
     "role": "user"
+  },
+  {
+    "id": 4,
+    "email": "musica_55@gmail.com",
+    "passwordHash": "$2b$10$GrSFHEllVc7jK8Sc2qsoDuo28dSt.3MrWpCyOV3TTEJK6MGf93OJ6",
+    "role": "user"
   }
 ]

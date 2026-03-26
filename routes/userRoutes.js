@@ -1,19 +1,3 @@
-//devuelve datos  del usuario autenticado
-/*const express = require('express');
-const router = express.Router();
-const auth = require('../middlewares/auth');
-
-router.get('/perfil', auth, (req, res) => {
-  res.json({
-    ok: true,
-    data: {
-      email: req.user.email,
-      role: req.user.role
-    }
-  });
-});
-
-module.exports = router;*/
 
 const express = require('express');
 const router = express.Router();

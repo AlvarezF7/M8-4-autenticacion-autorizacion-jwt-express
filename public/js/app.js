@@ -1,11 +1,4 @@
-
-
-// ---------------- FUNCION PARA MOSTRAR MENSAJES ----------------
-function showMessage(element, text, type = 'error') {
-  if (!element) return;
-  element.innerText = text;
-  element.className = 'message ' + type; // agrega clase error o success
-}
+console.log('app.js cargado');
 
 // ---------------- LOGIN ----------------
 const formLogin = document.getElementById('loginForm');
@@ -21,7 +14,7 @@ if (formLogin) {
     const password = document.getElementById('password').value.trim();
 
     if (!email || !password) {
-      showMessage(mensajeLogin, 'Email y contraseña son requeridos', 'error');
+      mostrarMensaje(mensajeLogin, 'Email y contraseña son requeridos', 'error');
       return;
     }
 
@@ -37,13 +30,12 @@ if (formLogin) {
       if (res.status === 200 && data.ok) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('userRole', data.role || 'user');
-        showMessage(mensajeLogin, 'Login exitoso', 'success');
         window.location.href = '/perfil.html';
       } else {
-        showMessage(mensajeLogin, data.mensaje || 'Error en login', 'error');
+        mostrarMensaje(mensajeLogin, data.mensaje || 'Error en login', 'error');
       }
     } catch (error) {
-      showMessage(mensajeLogin, 'Error de conexión', 'error');
+      mostrarMensaje(mensajeLogin, 'Error de conexión', 'error');
       console.error(error);
     }
   });
@@ -59,15 +51,14 @@ if (formRegister) {
 
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
-    const role = document.getElementById('role')?.value.trim() || 'user';
 
     if (!email || !password) {
-      showMessage(mensajeRegister, 'Email y contraseña son requeridos', 'error');
+      mostrarMensaje(mensajeRegister, 'Email y contraseña son requeridos', 'error');
       return;
     }
 
     if (!isValidPassword(password)) {
-      showMessage(mensajeRegister, 'La contraseña no puede tener más de 6 caracteres', 'error');
+      mostrarMensaje(mensajeRegister, 'La contraseña no puede tener más de 6 caracteres', 'error');
       return;
     }
 
@@ -75,19 +66,19 @@ if (formRegister) {
       const res = await fetch('/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password, role })
+        body: JSON.stringify({ email, password, role: 'user' }) // Rol fijo
       });
 
       const data = await res.json();
 
       if (res.status === 201 && data.ok) {
-        showMessage(mensajeRegister, 'Usuario registrado correctamente', 'success');
+        mostrarMensaje(mensajeRegister, 'Usuario registrado correctamente', 'success');
         formRegister.reset();
       } else {
-        showMessage(mensajeRegister, data.mensaje || 'Error al registrar usuario', 'error');
+        mostrarMensaje(mensajeRegister, data.mensaje || 'Error al registrar usuario', 'error');
       }
     } catch (error) {
-      showMessage(mensajeRegister, 'Error de conexión', 'error');
+      mostrarMensaje(mensajeRegister, 'Error de conexión', 'error');
       console.error(error);
     }
   });
@@ -100,7 +91,7 @@ function isValidPassword(pass) {
 
 // ---------------- PERFIL USUARIO ----------------
 const perfilDiv = document.getElementById('detalle'); // Div dinámico
-const mensajePerfil = document.getElementById('mensaje'); // Mensaje de errores de perfil
+const mensajePerfil = document.getElementById('mensaje'); // Mensaje de errores en perfil
 const btnCerrar = document.getElementById('btnCerrar');
 
 if (perfilDiv) {
@@ -124,10 +115,10 @@ if (perfilDiv) {
       })
       .then(data => {
         if (data && data.ok) {
-          // Mensaje especial para admin
+        
           let adminMsg = '';
           if (data.data.role === 'admin') {
-            adminMsg = `<p style="color:##082c8d; font-weight:bold;">¡Bienvenido administrador!</p>`;
+            adminMsg = `<p style="color:#082f81; font-weight:bold;">¡Bienvenido administrador!</p>`;
           }
 
           perfilDiv.innerHTML = `
@@ -139,7 +130,7 @@ if (perfilDiv) {
         }
       })
       .catch(err => {
-        showMessage(mensajePerfil, 'Error al cargar perfil', 'error');
+        mostrarMensaje(mensajePerfil, 'Error al cargar perfil', 'error');
         console.error(err);
       });
   }
@@ -152,4 +143,17 @@ if (btnCerrar) {
     localStorage.removeItem('userRole');
     window.location.href = '/';
   });
+}
+
+// ---------------- FUNCIÓN PARA MENSAJES ----------------
+function mostrarMensaje(elemento, texto, tipo) {
+  if (!elemento) return;
+  elemento.innerText = texto;
+  elemento.classList.remove('error', 'success');
+  elemento.classList.add('message'); // clase base para fondo gris
+  if (tipo === 'error') {
+    elemento.classList.add('error');
+  } else if (tipo === 'success') {
+    elemento.classList.add('success');
+  }
 }

@@ -1,148 +1,11 @@
-/*
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  height: 100vh; /* altura total de la ventana *
-  background: linear-gradient(135deg, #456bd4, #beccf3);
- 
-}
-
-.container {
-  display: grid;
-  place-items: center; 
-  height: 100%;       
-  width: 100%;
-  padding: 1rem;
-}
-
-#login, #register {
-  width: 500px;         
-  max-width: 90%;  /* se adapta en pantallas pequeñas *
-  padding: 1rem;
-  background-color: #9eb4fa9c;
-  color: #0d35a1;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 10px 20px rgba(12, 12, 155, 0.616);
-}
-
-#perfil {
-  width: 500px;           
-  max-width: 90%;     
-  padding: 20px;
-  background-color:  #9eb4fa9c;
-  border-radius: 12px;
-  color: #082c8d;
-  text-align: center;
-  box-shadow: 0 10px 20px rgba(20, 20, 163, 0.795);
-  display: flex;        
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Div dinámico detalle *
-#detalle {
-  width: 100%;
-  max-height: 170px;      
-  min-height: 50px;       
-  overflow-y: auto;  
-  color:#082c8d;    
-  margin: 10px 0;        
-  padding: 10px;
-  background-color: rgba(231, 237, 255, 0.253);
-  border-radius: 8px;
-  box-sizing: border-box; /* evita que padding haga crecer más el div *
-}
-
-input {
-  width: 80%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #93c5fd;
-  outline: none;
-  transition: 0.2s;
-}
-
-input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
-}
-
-.btn {
-  width: 85%;
-  padding: 12px;
-  margin-top: 14px;
-  border: none;
-  border-radius: 8px;
-  background: #082f81;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.btn:hover {
-  background: #3b5fc2f1;
-}
-
-
-#mensaje {
-  margin-top: 12px;
-  font-size: 0.9rem;
-  color: #f87171;
-}
-
-footer {
-  text-align: center;
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size:medium;
-  font-weight: bold;
-  font-style: italic;
-  color:#0832a7;
-;
-}
-
-
-
-/*-------------- MEDIA QUERIES------------- *
-@media (max-width: 768px) {
-  #login, #perfil {
-    width: 80%; 
-    padding: 1.5rem;
-  }
-
-  input, button {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #login, #perfil, #register {
-    width: 80%;
-    padding: 0.5rem;
-  }
-
-  h2 {
-    font-size: 1rem;
-  }
-
-  input, button {
-    padding: 10px;
-  }
-}*/
-
-
-/* RESET */
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* BODY */
+
 body {
   margin: 0;
   display:flex;
@@ -154,7 +17,6 @@ body {
  
 }
 
-/* CONTENEDOR PRINCIPAL */
 .container {
   width: 100%;
   margin-top: 2rem;
@@ -178,7 +40,7 @@ body {
   box-shadow: 0 10px 20px rgba(12, 12, 155, 0.6);
 }
 
-/* PERFIL (flex interno) */
+
 #perfil {
   display: flex;
   flex-direction: column;
