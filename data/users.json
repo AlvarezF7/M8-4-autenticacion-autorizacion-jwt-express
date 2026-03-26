@@ -1,0 +1,20 @@
+[
+  {
+    "id": 2,
+    "email": "demo@gmail.com",
+    "passwordHash": "$2b$10$xHFUxDZvOFdabVKVZnxtpeQfnr8on4fJt9KX.D7Op9DIS1GpgdjXm",
+    "role": "user"
+  },
+  {
+    "id": 1,
+    "email": "administrador@gmail.com",
+    "passwordHash": "$2b$10$ZJgmKN1qm/8XucamYq12l.gQ.mBjal0JGO/aaOrKY9zdo3B2mFwKe",
+    "role": "admin"
+  },
+  {
+    "id": 3,
+    "email": "devnueve@gmail.com",
+    "passwordHash": "$2b$10$fBgrkIZwUPNck75fzAcMv.wmBYZO3S/QrTz3wUGQdkxGiQi5co4Su",
+    "role": "user"
+  }
+]

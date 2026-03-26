@@ -1,0 +1,304 @@
+/*
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh; /* altura total de la ventana *
+  background: linear-gradient(135deg, #456bd4, #beccf3);
+ 
+}
+
+.container {
+  display: grid;
+  place-items: center; 
+  height: 100%;       
+  width: 100%;
+  padding: 1rem;
+}
+
+#login, #register {
+  width: 500px;         
+  max-width: 90%;  /* se adapta en pantallas pequeñas *
+  padding: 1rem;
+  background-color: #9eb4fa9c;
+  color: #0d35a1;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(12, 12, 155, 0.616);
+}
+
+#perfil {
+  width: 500px;           
+  max-width: 90%;     
+  padding: 20px;
+  background-color:  #9eb4fa9c;
+  border-radius: 12px;
+  color: #082c8d;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(20, 20, 163, 0.795);
+  display: flex;        
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Div dinámico detalle *
+#detalle {
+  width: 100%;
+  max-height: 170px;      
+  min-height: 50px;       
+  overflow-y: auto;  
+  color:#082c8d;    
+  margin: 10px 0;        
+  padding: 10px;
+  background-color: rgba(231, 237, 255, 0.253);
+  border-radius: 8px;
+  box-sizing: border-box; /* evita que padding haga crecer más el div *
+}
+
+input {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #93c5fd;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}
+
+.btn {
+  width: 85%;
+  padding: 12px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #082f81;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn:hover {
+  background: #3b5fc2f1;
+}
+
+
+#mensaje {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #f87171;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size:medium;
+  font-weight: bold;
+  font-style: italic;
+  color:#0832a7;
+;
+}
+
+
+
+/*-------------- MEDIA QUERIES------------- *
+@media (max-width: 768px) {
+  #login, #perfil {
+    width: 80%; 
+    padding: 1.5rem;
+  }
+
+  input, button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #login, #perfil, #register {
+    width: 80%;
+    padding: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  input, button {
+    padding: 10px;
+  }
+}*/
+
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* BODY */
+body {
+  margin: 0;
+  display:flex;
+  flex-direction: column;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh; /* altura total de la ventana */
+  background: linear-gradient(135deg, #456bd4, #beccf3);
+ 
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+}
+
+/* TARJETAS */
+#login, #register, #perfil {
+ min-height: 300px;
+  width: 500px;
+  max-width: 90%;
+  padding: 1.5rem;
+  background-color: #9eb3fa7e;
+  color: #0d35a1;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(12, 12, 155, 0.6);
+}
+
+/* PERFIL (flex interno) */
+#perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* DIV DINÁMICO */
+#detalle {
+  width: 100%;
+  max-height: 170px;
+  min-height: 50px;
+  overflow-y: auto;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: rgba(210, 221, 253, 0.486);
+  border-radius: 8px;
+  color: #082c8d;
+}
+p, a{
+  color:rgb(5, 14, 90);
+ padding: 10px;
+}
+
+/* Estilos para mensajes dinámicos */
+.message {
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  background-color: #f0f0f0; /* gris clarito de base */
+}
+
+/* Error → rojo */
+.message.error {
+  color: #d32f2f;
+  background-color: #f8d7da; 
+}
+
+
+.message.success {
+  color: #138f30;
+  background-color: #cef3d7; 
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #93c5fd;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}
+
+/* BOTONES */
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #082f81;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #3b5fc2f1;
+}
+
+/* MENSAJES */
+#mensaje {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #f87171;
+}
+
+/* FOOTER */
+footer {
+  margin-top: auto;
+  text-align: center;
+
+  padding: 10px;
+  font-weight: bold;
+  font-style: italic;
+  color: #0832a7;
+  background-color: #2355df8e;
+}
+
+/* ---------------- MEDIA QUERIES ---------------- */
+
+/* TABLET */
+@media (max-width: 768px) {
+  #login, #register, #perfil {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  #login, #register, #perfil {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  input, .btn {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}

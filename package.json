@@ -1,0 +1,32 @@
+{
+  "name": "m8-4-autenticacion-autorizacion-jwt-express",
+  "version": "1.0.0",
+  "description": "- Node.js.  \r - Express.   \r - HTML / CSS / JavaScript.  \r - Archivos JSON para datos de ejemplo (usuarios.json y productos.json).",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": " nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlvarezF7/M8-4-autenticacion-autorizacion-jwt-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AlvarezF7/M8-4-autenticacion-autorizacion-jwt-express/issues"
+  },
+  "homepage": "https://github.com/AlvarezF7/M8-4-autenticacion-autorizacion-jwt-express#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3"
+  }
+}
